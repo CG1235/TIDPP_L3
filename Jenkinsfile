@@ -22,7 +22,7 @@ pipeline {
     stages{
         stage('build'){
             steps{
-                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/V1talie/VotingSystem'
+                git branch: 'master', changelog: false, poll: false, url: 'https://github.com/CG1235/TIDPP_L3'
                 bat './mvnw clean compile'
             }
         }
@@ -47,7 +47,7 @@ pipeline {
     post {
           always {
 
-               emailext attachLog: true, body: 'Rezultat $BUILD_URL', subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', to: 'jenkinsnotif999@gmail.com'
+               emailext attachLog: true, body: 'Rezultat $BUILD_URL', subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', to: 'sfog.team@gmail.com'
 
                junit '**/target/surefire-reports/*.xml'
 
