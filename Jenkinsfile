@@ -22,7 +22,7 @@ pipeline {
     stages{
         stage('build'){
             steps{
-                git branch: 'master', changelog: false, poll: false, url: 'https://github.com/CG1235/TIDPP_L3'
+                git branch: 'master', changelog: false, poll: false, url: 'https://github.com/CG1235/TIDPP_L3.git'
                 bat './mvnw clean compile'
             }
         }
